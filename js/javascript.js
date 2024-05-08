@@ -10,6 +10,7 @@ function barajaTarjetas() {
   return resultado;
 }
 
+//esti es algo
 function reparteTarjetas() {
   var mesa = document.querySelector("#mesa");
   var tarjetasBarajadas = barajaTarjetas();
