@@ -2,6 +2,10 @@ var grupoTarjetas = ["😎", "🍦", "🐸", "👽", "👾", "🤖", "👹", "�
 
 var totalTarjetas = grupoTarjetas.concat(grupoTarjetas);
 
+//texto de prueba
+//holaaaa
+
+
 function barajaTarjetas() {
   var resultado;
   resultado = totalTarjetas.sort(function() {
