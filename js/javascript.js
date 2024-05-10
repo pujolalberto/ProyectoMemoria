@@ -2,10 +2,6 @@ var grupoTarjetas = ["😎", "🍦", "🐸", "👽", "👾", "🤖", "👹", "�
 
 var totalTarjetas = grupoTarjetas.concat(grupoTarjetas);
 
-//texto de prueba
-//holaaaa
-
-
 function barajaTarjetas() {
   var resultado;
   resultado = totalTarjetas.sort(function() {
@@ -34,8 +30,32 @@ function reparteTarjetas() {
 }
 
 function descubrir() {
-  this.classList.add("descubierta");
+  var controlDescubiertas = document.querySelectorAll(".descubierta");
+
+  if (controlDescubiertas.length > 1)  {
+  return
+
 }
+
+
+  this.classList.add("descubierta");
+
+
+  descubiertas = document.querySelectorAll(".descubierta");
+  if (descubiertas.length < 2) {
+  return;
+ 
+
+}
+
+if (descubiertas[0].textContent === descubiertas[1].textContent){
+  console.log("acierto")}
+  else {
+    console.log("error");}
+
+
+}
+
 
 reparteTarjetas();
 
