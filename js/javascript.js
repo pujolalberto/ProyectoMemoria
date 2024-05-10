@@ -19,7 +19,9 @@ function reparteTarjetas() {
     var tarjeta = document.createElement("div");
 
     tarjeta.innerHTML =
-      "<div class='tarjeta'>" +
+      "<div class='tarjeta' data-valor=" +
+      elemento +
+      ">" +
       "<div class='tarjeta__contenido'>" +
       elemento +
       "</div>" +
@@ -48,7 +50,7 @@ function descubrir() {
 
 }
 
-if (descubiertas[0].textContent === descubiertas[1].textContent){
+if (descubiertas[0].dataset.valor === descubiertas[1].dataset.valor){
   console.log("acierto")}
   else {
     console.log("error");}
