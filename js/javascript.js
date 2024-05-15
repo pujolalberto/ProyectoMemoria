@@ -31,6 +31,7 @@ function reparteTarjetas() {
   });
 }
 
+let coincidentes = [];
 let elegidos = [];
 let emojis = [];
 
@@ -45,7 +46,18 @@ function descubrir(e) {
     if (elegidos.length === 2) {
       if (emojis[0] === emojis[1]) {
         console.log("coinciden");
-        
+        coincidentes.push(elegidos[0]);
+        coincidentes.push(elegidos[1]);
+        elegidos = [];
+        emojis = [];
+        if (coincidentes.length === 16) {
+          //Ingresamos un mensaje a mostrar
+          var mensaje = confirm("Ganaste");
+          //Detectamos si el usuario acepto el mensaje
+          if (mensaje) {
+            location.reload();
+          }
+        }
       } else {
         setTimeout(() => {
           elegidos.forEach(id => {
