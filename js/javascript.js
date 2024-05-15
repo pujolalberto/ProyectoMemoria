@@ -10,7 +10,6 @@ function barajaTarjetas() {
   return resultado;
 }
 
-
 function reparteTarjetas() {
   var mesa = document.querySelector("#mesa");
   var tarjetasBarajadas = barajaTarjetas();
@@ -32,29 +31,32 @@ function reparteTarjetas() {
   });
 }
 
+let elegidos = [];
+let emojis = [];
+
 function descubrir(e) {
   const id = e.target.id;
-  let elegidos = [0,0];
-  if (elegidos[0] == 0) { 
-    elegidos[0] = id;
-  } else {
-    elegidos[1] = id;
-  }
+  
+  if (elegidos.length < 2 && !elegidos.includes(id)) {
+    elegidos.push(id);
+    emojis.push(e.target.innerText);
+    e.target.classList.add("descubierta");
 
-  let emojis = ["",""];
-  if (emojis[0] == 0) { 
-    emojis[0] = e.target.innerText;
-  } else {
-    emojis[1] = e.target.innerText;
+    if (elegidos.length === 2) {
+      if (emojis[0] === emojis[1]) {
+        console.log("coinciden");
+        // Aquí puedes añadir acciones adicionales cuando los emojis coincidan
+      } else {
+        setTimeout(() => {
+          elegidos.forEach(id => {
+            document.getElementById(id).classList.remove("descubierta");
+          });
+          elegidos = [];
+          emojis = [];
+        }, 1000); // tiempo de espera antes de ocultar las tarjetas
+      }
+    }
   }
-
-  if (emojis[0] == emojis[1]) {
-    console.log("coinciden");
-  }
-  //verificar si ya se dieron todas las coincidencias
-  //longitud * 2 = contador
-
-  this.classList.add("descubierta");
 }
 
 reparteTarjetas();
