@@ -45,7 +45,7 @@ function descubrir(e) {
     if (elegidos.length === 2) {
       if (emojis[0] === emojis[1]) {
         console.log("coinciden");
-        // Aquí puedes añadir acciones adicionales cuando los emojis coincidan
+        
       } else {
         setTimeout(() => {
           elegidos.forEach(id => {
@@ -53,7 +53,7 @@ function descubrir(e) {
           });
           elegidos = [];
           emojis = [];
-        }, 1000); // tiempo de espera antes de ocultar las tarjetas
+        }, 1000); 
       }
     }
   }
