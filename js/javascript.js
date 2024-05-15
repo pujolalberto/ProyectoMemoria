@@ -32,30 +32,30 @@ function reparteTarjetas() {
   });
 }
 
-function descubrir(e) {
-  const id = e.target.id;
-  let elegidos = [0,0];
-  if (elegidos[0] == 0) { 
-    elegidos[0] = id;
-  } else {
-    elegidos[1] = id;
-  }
+//function descubrir(e) {
+  //const id = e.target.id;
+  //let elegidos = [0,0];
+  //if (elegidos[0] == 0) { 
+   // elegidos[0] = id;
+  //} else {
+   // elegidos[1] = id;
+  //}
 
-  let emojis = ["",""];
-  if (emojis[0] == 0) { 
-    emojis[0] = e.target.innerText;
-  } else {
-    emojis[1] = e.target.innerText;
-  }
+ // let emojis = ["",""];
+  //if (emojis[0] == 0) { 
+    //emojis[0] = e.target.innerText;
+  //} else {
+   // emojis[1] = e.target.innerText;
+  //}
 
-  if (emojis[0] == emojis[1]) {
-    console.log("coinciden");
-  }
+  //if (emojis[0] == emojis[1]) {
+   // console.log("coinciden");
+  //}
   //verificar si ya se dieron todas las coincidencias
   //longitud * 2 = contador
 
-  this.classList.add("descubierta");
-}
+  //this.classList.add("descubierta");
+//}
 
 reparteTarjetas();
 
